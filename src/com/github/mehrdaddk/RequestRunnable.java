@@ -10,9 +10,9 @@ import com.intellij.ui.JBColor;
 import com.intellij.ui.popup.PopupFactoryImpl;
 
 class RequestRunnable implements Runnable {
-    private GoogleTranslator mGoogleTranslator;
-    private Editor mEditor;
-    private String mQuery;
+    private final GoogleTranslator mGoogleTranslator;
+    private final Editor mEditor;
+    private final String mQuery;
 
     RequestRunnable(GoogleTranslator translator, Editor editor, String query) {
         this.mEditor = editor;
@@ -31,7 +31,7 @@ class RequestRunnable implements Runnable {
         if (text == null) {
             showPopupBalloon("خطا در ترجمه！");
         } else {
-            showPopupBalloon("ترجمه：" + text);
+            showPopupBalloon( text);
         }
     }
 
